@@ -4,15 +4,25 @@
  */
 package projetolpoo.controllers;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,12 +48,110 @@ public class HomeController implements Initializable {
     @FXML
     private Menu btnSair;
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     /**
      * Initializes the controller class.
      */
     @Override
+
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    private void listarLeiloes(ActionEvent event) throws IOException {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/ListarLeiloes.fxml"));
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+    }
+
+    @FXML
+    private void cadastrarLeilao(ActionEvent event) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/CadastrarLeilao.fxml"));
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+
+    }
+
+    @FXML
+    private void gerarRelatorioLeilao(ActionEvent event) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/GerarRelatorioLeilao.fxml"));
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+
+    }
+
+    @FXML
+    private void sair(ActionEvent event) {
+        System.out.println("teste");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/Login.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+
+    }
+
+
+
 }

@@ -12,24 +12,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="projetolpoo.controllers.CadastrarItemController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetolpoo.controllers.CadastrarItemController">
    <children>
       <Pane layoutX="-4.0" prefHeight="400.0" prefWidth="606.0">
          <children>
             <MenuBar fx:id="mnbMenu" prefHeight="18.0" prefWidth="600.0">
                <menus>
-                  <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
+                  <Menu fx:id="btnMenu" mnemonicParsing="false" onAction="#voltarPraHome" text="Home" />
                   <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
                      <items>
-                        <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" text="Listar Leilões" />
+                        <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" onAction="#cadastrarLeilao" text="Cadastrar Leilão" />
+                        <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" onAction="#listarLeiloes" text="Listar Leilões" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" text="Cadastrar Leilão" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" text="Gerar Relatório de leilões" />
+                        <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" onAction="#gerarRelatorioLeilao" text="Gerar Relatório de leilões" />
                      </items>
                   </Menu>
-                  <Menu fx:id="btnSair" mnemonicParsing="false" text="Sair" />
+                  <Menu fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Sair" />
                </menus>
             </MenuBar>
             <Label fx:id="lblNomeItem" layoutX="229.0" layoutY="72.0" text="Nome do Item" />

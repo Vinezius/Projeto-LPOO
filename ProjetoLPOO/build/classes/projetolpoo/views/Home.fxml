@@ -16,14 +16,14 @@
           <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
           <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
             <items>
-              <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" text="Listar Leilões" />
+              <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" onAction="#listarLeiloes" text="Listar Leilões" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" text="Cadastrar Leilão" />
+                  <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" onAction="#cadastrarLeilao" text="Cadastrar Leilão" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" text="Gerar Relatório de leilões" />
+                  <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" onAction="#gerarRelatorioLeilao" text="Gerar Relatório de leilões" />
             </items>
           </Menu>
-          <Menu fx:id="btnSair" mnemonicParsing="false" text="Sair" />
+          <Menu fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Sair" />
         </menus>
       </MenuBar>
       <Text fx:id="txtBemVindo" layoutX="50.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boas vindas a casa de leilões do Zeca!">
@@ -31,6 +31,6 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <TextArea layoutX="50.0" layoutY="124.0" prefHeight="200.0" prefWidth="499.0" text="Nossa casa foi aberta em 18/02/2020 na cidade de Ponta grossa - Paraná.&#10;Atualmente passam mais de 15000 itens mensalmente pelas nossas mãos de forma segura&#10;e organizada.&#10;Garantimos segurança e confiabilidade em sua experiência conosco.&#10;Sinta-se a vontade para iniciar clicando sobre o menu &quot;Leilões&quot; no canto superior esquerdo&#10;da tela! &#10;Agradecemos a confiança e lhe desejamos boas vindas!" />
+      <TextArea editable="false" layoutX="50.0" layoutY="124.0" prefHeight="200.0" prefWidth="499.0" style="-fx-cursor: pointer;" text="Nossa casa foi aberta em 18/02/2020 na cidade de Ponta grossa - Paraná.&#10;Atualmente passam mais de 15000 itens mensalmente pelas nossas mãos de forma segura&#10;e organizada.&#10;Garantimos segurança e confiabilidade em sua experiência conosco.&#10;Sinta-se a vontade para iniciar clicando sobre o menu &quot;Leilões&quot; no canto superior esquerdo&#10;da tela! &#10;Agradecemos a confiança e lhe desejamos boas vindas!" />
    </children>
 </AnchorPane>
