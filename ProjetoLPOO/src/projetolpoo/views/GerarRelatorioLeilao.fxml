@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="projetolpoo.controllers.GerarRelatorioLeilaoController">
+   <children>
+      <Pane layoutX="-3.0" layoutY="-1.0" prefHeight="420.0" prefWidth="607.0">
+         <children>
+            <MenuBar fx:id="mnbMenu" prefHeight="18.0" prefWidth="600.0">
+               <menus>
+                  <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
+                  <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
+                     <items>
+                        <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" text="Listar Leilões" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" text="Cadastrar Leilão" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" text="Gerar Relatório de leilões" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="btnSair" mnemonicParsing="false" text="Sair" />
+               </menus>
+            </MenuBar>
+            <TableView fx:id="tvTabelaItens" layoutX="2.0" layoutY="24.0" prefHeight="397.0" prefWidth="604.0">
+              <columns>
+                <TableColumn fx:id="tbcNomeItem" prefWidth="141.0" text="Nome do item" />
+                <TableColumn fx:id="tbcNomeLeilao" prefWidth="180.0" text="Nome do leilão" />
+                  <TableColumn fx:id="tbcLanceIntermediario" prefWidth="148.0" text="Lance Intermediário" />
+                  <TableColumn fx:id="tbcLanceFinal" prefWidth="133.0" text="Lance Final" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

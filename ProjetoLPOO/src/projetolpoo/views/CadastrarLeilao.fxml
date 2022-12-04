@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="projetolpoo.controllers.CadastrarLeilaoController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <MenuBar fx:id="mnbMenu" prefHeight="18.0" prefWidth="600.0">
+               <menus>
+                  <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
+                  <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
+                     <items>
+                        <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" text="Listar Leilões" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" text="Cadastrar Leilão" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" text="Gerar Relatório de leilões" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="btnSair" mnemonicParsing="false" text="Sair" />
+               </menus>
+            </MenuBar>
+            <Label fx:id="lblNomeLeilao" layoutX="226.0" layoutY="79.0" text="Nome do leilão" />
+            <TextField fx:id="txtfNomeLeilao" layoutX="226.0" layoutY="96.0" />
+            <Label fx:id="lblDtInicio" layoutX="231.0" layoutY="130.0" text="Data de Início" />
+            <DatePicker fx:id="dtDataInicio" layoutX="226.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label fx:id="lblDtFim" layoutX="231.0" layoutY="183.0" text="Data de Fim" />
+            <DatePicker fx:id="dtDataFim" layoutX="226.0" layoutY="204.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="btnProximo" layoutX="315.0" layoutY="251.0" mnemonicParsing="false" text="Próximo" />
+            <Button fx:id="btnLimpar" layoutX="226.0" layoutY="251.0" mnemonicParsing="false" text="Limpar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

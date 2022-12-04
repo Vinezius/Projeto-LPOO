@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="projetolpoo.controllers.ListarLeiloesController">
+   <children>
+      <Pane layoutX="1.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <MenuBar fx:id="mnbMenu" prefHeight="18.0" prefWidth="600.0">
+               <menus>
+                  <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
+                  <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
+                     <items>
+                        <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" text="Listar Leilões" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" text="Cadastrar Leilão" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" text="Gerar Relatório de leilões" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="btnSair" mnemonicParsing="false" text="Sair" />
+               </menus>
+            </MenuBar>
+            <TableView fx:id="tvTabelaLeiloes" layoutX="-1.0" layoutY="25.0" prefHeight="373.0" prefWidth="601.0">
+              <columns>
+                <TableColumn fx:id="tbcNomeLeilao" prefWidth="128.0" text="Nome do Leilão" />
+                <TableColumn fx:id="tbcNumParticipantes" prefWidth="158.0" text="Número. de Participantes" />
+                  <TableColumn fx:id="tbcDtInicio" prefWidth="97.0" text="Data de Início" />
+                  <TableColumn fx:id="tbcDtFim" prefWidth="95.0" text="Data de Fim" />
+                  <TableColumn fx:id="tbcNumItens" prefWidth="122.0" text="Número de Itens" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
