@@ -13,7 +13,10 @@
    <children>
       <MenuBar fx:id="mnbMenu" layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
         <menus>
-          <Menu fx:id="btnMenu" mnemonicParsing="false" text="Home" />
+          <Menu fx:id="mnHome" mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem fx:id="btnHome" mnemonicParsing="false" onAction="#voltarPraHome" text="Voltar a Home" />
+               </items></Menu>
           <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
             <items>
               <MenuItem fx:id="btnListarLeiloes" mnemonicParsing="false" onAction="#listarLeiloes" text="Listar Leilões" />
@@ -23,7 +26,10 @@
                   <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" onAction="#gerarRelatorioLeilao" text="Gerar Relatório de leilões" />
             </items>
           </Menu>
-          <Menu fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Sair" />
+          <Menu fx:id="mnSair" mnemonicParsing="false" onAction="#sair" text="Sair">
+               <items>
+                  <MenuItem fx:id="btnSair" mnemonicParsing="false" text="Sair da conta" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <Text fx:id="txtBemVindo" layoutX="50.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boas vindas a casa de leilões do Zeca!">

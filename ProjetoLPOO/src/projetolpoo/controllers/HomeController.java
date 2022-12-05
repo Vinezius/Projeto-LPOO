@@ -36,8 +36,6 @@ public class HomeController implements Initializable {
     @FXML
     private Text txtBemVindo;
     @FXML
-    private Menu btnMenu;
-    @FXML
     private Menu mnLeiloes;
     @FXML
     private MenuItem btnListarLeiloes;
@@ -46,11 +44,17 @@ public class HomeController implements Initializable {
     @FXML
     private MenuItem btnGerarRelatorio;
     @FXML
-    private Menu btnSair;
+    private MenuItem btnSair;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private Menu mnHome;
+    @FXML
+    private MenuItem btnHome;
+    @FXML
+    private Menu mnSair;
 
     /**
      * Initializes the controller class.
@@ -131,10 +135,9 @@ public class HomeController implements Initializable {
 
     @FXML
     private void sair(ActionEvent event) {
-        System.out.println("teste");
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../views/Login.fxml"));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -150,6 +153,10 @@ public class HomeController implements Initializable {
             throw e;
         }
 
+    }
+
+    @FXML
+    private void voltarPraHome(ActionEvent event) {
     }
 
 

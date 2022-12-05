@@ -32,8 +32,6 @@ public class GerarRelatorioLeilaoController implements Initializable {
     @FXML
     private MenuBar mnbMenu;
     @FXML
-    private Menu btnMenu;
-    @FXML
     private Menu mnLeiloes;
     @FXML
     private MenuItem btnListarLeiloes;
@@ -42,7 +40,7 @@ public class GerarRelatorioLeilaoController implements Initializable {
     @FXML
     private MenuItem btnGerarRelatorio;
     @FXML
-    private Menu btnSair;
+    private MenuItem btnSair;
     @FXML
     private TableView<?> tvTabelaItens;
     @FXML
@@ -57,6 +55,12 @@ public class GerarRelatorioLeilaoController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private MenuItem btnHome;
+    @FXML
+    private Menu mnSair;
+    @FXML
+    private Menu mnHome;
 
     /**
      * Initializes the controller class.
@@ -68,6 +72,25 @@ public class GerarRelatorioLeilaoController implements Initializable {
 
     @FXML
     private void voltarPraHome(ActionEvent event) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/Home.fxml"));
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+
     }
 
     @FXML
@@ -142,6 +165,25 @@ public class GerarRelatorioLeilaoController implements Initializable {
 
     @FXML
     private void sair(ActionEvent event) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/Login.fxml"));
+            stage = (Stage) ((Node) mnbMenu).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (NullPointerException e) {
+            System.out.println("Erro de execução. Endereço do arquivo incorreto.");
+            throw e;
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado.");
+        } catch (IOException e) {
+            System.out.println("Erro de leitura.");
+        } catch (Exception e) {
+            System.out.println("Erro desconhecido.");
+            throw e;
+        }
+
     }
 
 }

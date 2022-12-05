@@ -15,7 +15,10 @@
          <children>
             <MenuBar fx:id="mnbMenu" prefHeight="18.0" prefWidth="600.0">
                <menus>
-                  <Menu fx:id="btnMenu" mnemonicParsing="false" onAction="#voltarPraHome" text="Home" />
+                  <Menu fx:id="mnHome" mnemonicParsing="false" onAction="#voltarPraHome" text="Home">
+                     <items>
+                        <MenuItem fx:id="btnHome" mnemonicParsing="false" onAction="#voltarPraHome" text="Voltar a Home" />
+                     </items></Menu>
                   <Menu fx:id="mnLeiloes" mnemonicParsing="false" text="Leilões">
                      <items>
                         <MenuItem fx:id="btnCadastrarLeilao" mnemonicParsing="false" onAction="#cadastrarLeilao" text="Cadastrar Leilão" />
@@ -25,7 +28,10 @@
                         <MenuItem fx:id="btnGerarRelatorio" mnemonicParsing="false" onAction="#gerarRelatorioLeilao" text="Gerar Relatório de leilões" />
                      </items>
                   </Menu>
-                  <Menu fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Sair" />
+                  <Menu fx:id="mnSair" mnemonicParsing="false" onAction="#sair" text="Sair">
+                     <items>
+                        <MenuItem fx:id="btnSair" mnemonicParsing="false" onAction="#sair" text="Sair da Conta" />
+                     </items></Menu>
                </menus>
             </MenuBar>
             <TableView fx:id="tvTabelaLeiloes" layoutX="-1.0" layoutY="25.0" prefHeight="373.0" prefWidth="601.0">
