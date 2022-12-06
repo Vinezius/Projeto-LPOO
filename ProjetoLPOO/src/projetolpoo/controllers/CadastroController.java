@@ -115,23 +115,29 @@ public class CadastroController implements Initializable {
 
             try {
                 Statement sessao = conexao.createStatement();
-                ResultSet resultadoQuery = sessao.executeQuery("Insert into participante(email, login, nome, endereco, telefone, senha ) "
-                        + "VALUES (" + email + "," + login + "," + nome + "," + endereco + "," + telefone + "," + senhaUsuario + ")");
+                ResultSet resultadoQuery = sessao.executeQuery("Insert into participante VALUES (" + email + "," + login + "," + nome + "," + endereco + "," + telefone + "," + senhaUsuario + ")");
 
                 if (resultadoQuery.next() && email.matches("^(.+)@(.+)$*") && telefone.length() > 10 && !login.isBlank() && !nome.isBlank() && !endereco.isBlank() && !senhaUsuario.isBlank()) {
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                     voltarLogin(event);
                     sessao.close();
+                } else if (!email.matches("^(.+)@(.+)$*")) {
+                    JOptionPane.showMessageDialog(null, "Insira um e-mail válido.");
+
+                } else if (senhaUsuario.length() < 6) {
+                    JOptionPane.showMessageDialog(null, "Por gentileza insira uma senha de pelo menos 6 caracteres.");
+                } else if (email.length() == 0 || login.length() == 0 || nome.length() == 0 || endereco.length() == 0 || telefone.length() == 0 || senhaUsuario.length() == 0) {
+                    JOptionPane.showMessageDialog(null, "Por gentileza preencha todos os campos.");
+
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao realizar cadastro. Tente novamente.");
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.out.println("Erro de SQL");
             }
 
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Falha na conexão");
-            e.printStackTrace();
         }
 
     }
