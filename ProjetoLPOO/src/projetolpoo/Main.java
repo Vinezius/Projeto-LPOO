@@ -26,7 +26,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("views/Home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("views/Cadastro.fxml"));
             primaryStage.setTitle("Casa de Leilões do Zeca");
             Scene cena = new Scene(root);
             primaryStage.setScene(cena);
